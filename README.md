@@ -15,8 +15,8 @@ A plugin that allows players to get a wish from a wishing well.
 
 ### Commands
 
-- /wishingwell give <player> <amount> - **Give scrolls to a player**
-- /wishingwell add <chance> - **add a reward with a chance to rewards to the config**
+- /wishingwell give %player% %amount% - **Give scrolls to a player**
+- /wishingwell add %chance% - **add a reward with a chance to rewards to the config**
 - /wishingwell reload - **reload the config**
 
 ### Permissions
