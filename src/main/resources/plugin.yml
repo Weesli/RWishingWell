@@ -1,0 +1,10 @@
+name: RWishingWell
+version: '1.0'
+main: net.weesli.rwishingwell.RWishingWell
+api-version: '1.13'
+authors: [ Weesli ]
+depend:
+  - WorldGuard
+commands:
+  wishingwell:
+    description: '/wishingwell'
