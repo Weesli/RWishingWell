@@ -1,8 +1,8 @@
-### Wishing Well System
+# Wishing Well System
 
 A plugin that allows players to get a wish from a wishing well.
 
-### Features
+# Features
 
 - Send message to players when they win or lose
 - Add rewards to the config
@@ -13,16 +13,23 @@ A plugin that allows players to get a wish from a wishing well.
 - Configurable win and lose messages
 - Configurable win chance
 
-### Commands
+# Commands
 
 - /wishingwell give %player% %amount% - **Give scrolls to a player**
 - /wishingwell add %chance% - **add a reward with a chance to rewards to the config**
 - /wishingwell reload - **reload the config**
 
-### Permissions
+# Permissions
 
 - This plugin has no permissions
 
+# Contributions
+
+If you want to develop the project, here is what to do;
+- Fork the project
+- create a pull request
+
+- and just wait for my confirmation :)
 
 
 
