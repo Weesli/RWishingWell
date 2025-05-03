@@ -27,15 +27,4 @@ public class ScrollUtil {
         itemStack.setItemMeta(meta);
         return itemStack;
     }
-
-    public static void addScroll(Player sender, int chance) {
-        ItemStack itemStack = sender.getInventory().getItemInMainHand();
-        if (itemStack.getType().isAir()){
-            return;
-        }
-        Reward reward = new Reward(itemStack, chance);
-        int next = RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().size() + 1;
-        RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().put("reward-" + next, reward);
-        RWishingWell.getInstance().getBaseConfig().save();
-    }
 }

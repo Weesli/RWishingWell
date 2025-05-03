@@ -1,6 +1,7 @@
 package net.weesli.rwishingwell.command;
 
 import net.weesli.rwishingwell.RWishingWell;
+import net.weesli.rwishingwell.util.RewardUtil;
 import net.weesli.rwishingwell.util.ScrollUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -42,7 +43,7 @@ public class WishingWellCommands implements CommandExecutor {
                 if (args.length == 2){
                     if (sender instanceof Player player){
                         int chance = Integer.parseInt(args[1]);
-                        ScrollUtil.addScroll(player, chance);
+                        RewardUtil.addReward(player, chance);
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aAdded Item to config with chance " + chance));
                         return true;
                     }

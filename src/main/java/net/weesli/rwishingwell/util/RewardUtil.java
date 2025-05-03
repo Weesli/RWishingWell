@@ -3,6 +3,7 @@ package net.weesli.rwishingwell.util;
 import net.weesli.rwishingwell.RWishingWell;
 import net.weesli.rwishingwell.model.Reward;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.Collection;
 
@@ -35,6 +36,17 @@ public class RewardUtil {
                 break;
             }
         }
+    }
+
+    public static void addReward(Player sender, int chance) {
+        ItemStack itemStack = sender.getInventory().getItemInMainHand();
+        if (itemStack.getType().isAir()){
+            return;
+        }
+        Reward reward = new Reward(itemStack, chance);
+        int next = RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().size() + 1;
+        RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().put("reward-" + next, reward);
+        RWishingWell.getInstance().getBaseConfig().save();
     }
 
 
