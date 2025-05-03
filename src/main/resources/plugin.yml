@@ -5,6 +5,7 @@ api-version: '1.13'
 authors: [ Weesli ]
 depend:
   - WorldGuard
+  - NBTAPI
 commands:
   wishingwell:
     description: '/wishingwell'

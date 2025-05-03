@@ -46,11 +46,11 @@ public class Config extends OkaeriConfig {
 
     @Getter
     public static class Item extends OkaeriConfig{
-        private final String title = "&eWish Scrolls";
-        private final String material = "PAPER";
+        private String title = "&eWish Scrolls";
+        private String material = "PAPER";
         @CustomKey("custom-model-data")
         private int custom_model_data = 0;
-        private final List<String> lore = List.of(
+        private List<String> lore = List.of(
                 "&aThis is a wishing scroll.",
                 "&aIf you wish it from the &c/warp wish &a section.",
                 "&aYou will receive a valuable item."
@@ -58,7 +58,7 @@ public class Config extends OkaeriConfig {
     }
     @Getter
     public static class RewardsSettings extends OkaeriConfig{
-        private final Map<String, Reward> rewards = Map.of(
+        private Map<String, Reward> rewards = Map.of(
                 "reward-1", new Reward(new ItemStack(Material.DIAMOND, 2), 50)
         );
     }

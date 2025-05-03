@@ -29,7 +29,9 @@ public class PlayerEvent implements Listener {
         if (!isScrollsItem) return;
         RegionManager regions = container.get(BukkitAdapter.adapt(player.getWorld()));
         ProtectedRegion region = regions.getRegion(RWishingWell.getInstance().getBaseConfig().getRegion_name());
-        if (region == null) return;
+        if (region == null) {
+            throw new RuntimeException("Wishing well region is not set, please set with WorldGuard!");
+        };
         new BukkitRunnable() {
             private int time = 100;
             @Override

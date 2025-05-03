@@ -1,5 +1,8 @@
 package net.weesli.rwishingwell.util;
 
+import de.tr7zw.nbtapi.NBT;
+import de.tr7zw.nbtapi.NBTItem;
+import de.tr7zw.nbtapi.plugin.NBTAPI;
 import net.weesli.rwishingwell.ColorBuilder;
 import net.weesli.rwishingwell.RWishingWell;
 import net.weesli.rwishingwell.model.Reward;
@@ -14,6 +17,9 @@ public class ScrollUtil {
     public static void giveScroll(Player player, int amount) {
         ItemStack itemStack = getScrollsItem();
         itemStack.setAmount(amount);
+        NBT.modify(itemStack, nbt ->{
+            nbt.setBoolean("isScroll", true);
+        });
         player.getInventory().addItem(itemStack);
     }
 
