@@ -20,19 +20,19 @@ public class RewardUtil {
     }
 
     private static void giveRandomItem(Player player) {
-        Collection<Reward> rewards = RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().values();
+        Collection<Reward> rewards = RWishingWell.getInstance().getBaseConfig().getRewards().values();
 
         int totalWeight = 0;
         for (Reward reward : rewards) {
-            totalWeight += reward.chance();
+            totalWeight += reward.getChance();
         }
 
         int random = (int) (Math.random() * totalWeight);
         int cumulative = 0;
         for (Reward reward : rewards) {
-            cumulative += reward.chance();
+            cumulative += reward.getChance();
             if (random < cumulative) {
-                player.getInventory().addItem(reward.itemStack());
+                player.getInventory().addItem(reward.getItemStack());
                 break;
             }
         }
@@ -44,8 +44,8 @@ public class RewardUtil {
             return;
         }
         Reward reward = new Reward(itemStack, chance);
-        int next = RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().size() + 1;
-        RWishingWell.getInstance().getBaseConfig().getRewardsSettings().getRewards().put("reward-" + next, reward);
+        int next = RWishingWell.getInstance().getBaseConfig().getRewards().size() + 1;
+        RWishingWell.getInstance().getBaseConfig().getRewards().put("reward-" + next, reward);
         RWishingWell.getInstance().getBaseConfig().save();
     }
 

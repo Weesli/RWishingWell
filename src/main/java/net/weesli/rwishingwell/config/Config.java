@@ -9,6 +9,7 @@ import net.weesli.rwishingwell.model.Reward;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,12 +39,13 @@ public class Config extends OkaeriConfig {
             ""
     );
 
-    @CustomKey("scrolls-item")
-    private Item scrolls_item = new Item();
+    @CustomKey("scroll-item")
+    private Item scroll_item = new Item();
 
     @CustomKey("rewards")
-    private RewardsSettings rewardsSettings = new RewardsSettings();
-
+    private Map<String, Reward> rewards = new HashMap<>(Map.of(
+            "reward-1", new Reward(new ItemStack(Material.DIAMOND, 2), 50)
+    ));
     @Getter
     public static class Item extends OkaeriConfig{
         private String title = "&eWish Scrolls";
@@ -54,12 +56,6 @@ public class Config extends OkaeriConfig {
                 "&aThis is a wishing scroll.",
                 "&aIf you wish it from the &c/warp wish &a section.",
                 "&aYou will receive a valuable item."
-        );
-    }
-    @Getter
-    public static class RewardsSettings extends OkaeriConfig{
-        private Map<String, Reward> rewards = Map.of(
-                "reward-1", new Reward(new ItemStack(Material.DIAMOND, 2), 50)
         );
     }
 }

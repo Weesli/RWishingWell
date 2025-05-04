@@ -1,6 +1,7 @@
 package net.weesli.rwishingwell;
 
 import eu.okaeri.configs.ConfigManager;
+import eu.okaeri.configs.yaml.bukkit.serdes.SerdesBukkit;
 import eu.okaeri.configs.yaml.snakeyaml.YamlSnakeYamlConfigurer;
 import lombok.Getter;
 import net.weesli.rwishingwell.command.WishingWellCommands;

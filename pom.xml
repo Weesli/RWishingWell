@@ -6,7 +6,7 @@
 
     <groupId>net.weesli</groupId>
     <artifactId>RWishingWell</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>RWishingWell</name>
@@ -90,6 +90,11 @@
         <dependency>
             <groupId>eu.okaeri</groupId>
             <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
+            <version>5.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.okaeri</groupId>
+            <artifactId>okaeri-configs-serdes-bukkit</artifactId>
             <version>5.0.5</version>
         </dependency>
         <dependency>
