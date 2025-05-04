@@ -5,6 +5,7 @@ import eu.okaeri.configs.serdes.*;
 import lombok.NonNull;
 import net.weesli.rwishingwell.model.Reward;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -18,6 +19,7 @@ public class ItemSerializer implements OkaeriSerdesPack {
     public void register(@NonNull SerdesRegistry registry) {
         registry.register(new RewardSerializer());
         registry.register(new ItemStackSerializer());
+        registry.register(new EnchantmentSerializer());
     }
     static class RewardSerializer implements ObjectSerializer<Reward> {
         @Override
@@ -86,10 +88,29 @@ public class ItemSerializer implements OkaeriSerdesPack {
             }
             if (data.containsKey("enchants")) {
                 Map<Enchantment, Integer> enchants = data.getAsMap("enchants", Enchantment.class, Integer.class);
-                enchants.entrySet().forEach(entry -> itemStack.addUnsafeEnchantment(entry.getKey(), entry.getValue()));
+                enchants.forEach(itemStack::addUnsafeEnchantment);
             }
             itemStack.setItemMeta(meta);
             return itemStack;
+        }
+    }
+
+    static class EnchantmentSerializer implements ObjectSerializer<Enchantment> {
+
+        @Override
+        public boolean supports(@NonNull Class<? super Enchantment> type) {
+            return Enchantment.class.isAssignableFrom(type);
+        }
+
+        @Override
+        public void serialize(@NonNull Enchantment object, @NonNull SerializationData data, @NonNull GenericsDeclaration generics) {
+            data.add("name", object.getKey().getKey());
+        }
+
+        @Override
+        public Enchantment deserialize(@NonNull DeserializationData data, @NonNull GenericsDeclaration generics) {
+            String name = data.get("name", String.class);
+            return Enchantment.getByKey(NamespacedKey.fromString(name));
         }
     }
 }
