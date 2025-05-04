@@ -21,12 +21,6 @@ public class ScrollUtil {
 
 
     private static ItemStack getScrollsItem() {
-        ItemStack itemStack = new ItemStack(Material.getMaterial(RWishingWell.getInstance().getBaseConfig().getScroll_item().getMaterial()));
-        ItemMeta meta = itemStack.getItemMeta();
-        meta.setDisplayName(ColorBuilder.convertColors(RWishingWell.getInstance().getBaseConfig().getScroll_item().getTitle()));
-        meta.setLore(RWishingWell.getInstance().getBaseConfig().getScroll_item().getLore().stream().map(ColorBuilder::convertColors).toList());
-        meta.setCustomModelData(RWishingWell.getInstance().getBaseConfig().getScroll_item().getCustom_model_data());
-        itemStack.setItemMeta(meta);
-        return itemStack;
+        return RWishingWell.getInstance().getConfig().getItemStack("scroll-item");
     }
 }

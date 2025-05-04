@@ -88,16 +88,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>eu.okaeri</groupId>
-            <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
-            <version>5.0.5</version>
-        </dependency>
-        <dependency>
-            <groupId>eu.okaeri</groupId>
-            <artifactId>okaeri-configs-serdes-bukkit</artifactId>
-            <version>5.0.5</version>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>

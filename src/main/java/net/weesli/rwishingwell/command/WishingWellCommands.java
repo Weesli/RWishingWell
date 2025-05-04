@@ -49,7 +49,8 @@ public class WishingWellCommands implements CommandExecutor {
                     }
                 }
             } else if (args[0].equals("reload")){ {
-                RWishingWell.getInstance().getBaseConfig().load();
+                RWishingWell.getInstance().reloadConfig();
+                RWishingWell.getInstance().saveConfig();
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aReloaded config"));
             }
             }

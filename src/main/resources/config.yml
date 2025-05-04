@@ -1,0 +1,28 @@
+#
+#   author @Weesli
+#
+
+prefix: "&7[&6RWishingWell&7] &f"
+region-name: "wishing_well"
+win-chance: 70
+win-title:
+    - "&3 You got a item in well"
+    - ""
+lose-title:
+    - "&3You didn't win anything!"
+    - ""
+scroll-item:
+    material: PAPER
+    custom-model-data: 0
+rewards:
+  reward-1:
+    itemstack:
+      ==: org.bukkit.inventory.ItemStack
+      v: 3839
+      type: DIAMOND_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          minecraft:sharpness: 5
+    chance: 99

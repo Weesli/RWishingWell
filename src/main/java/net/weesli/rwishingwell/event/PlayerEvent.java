@@ -28,7 +28,7 @@ public class PlayerEvent implements Listener {
         boolean isScrollsItem = ItemUtil.isScrollsItem(item.getItemStack());
         if (!isScrollsItem) return;
         RegionManager regions = container.get(BukkitAdapter.adapt(player.getWorld()));
-        ProtectedRegion region = regions.getRegion(RWishingWell.getInstance().getBaseConfig().getRegion_name());
+        ProtectedRegion region = regions.getRegion(RWishingWell.getInstance().getConfig().getString("region-name"));
         if (region == null) {
             throw new RuntimeException("Wishing well region is not set, please set with WorldGuard!");
         };
